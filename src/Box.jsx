@@ -3,10 +3,12 @@ import { useState } from 'react'
 
 
 const Box = ({ option }) => {
-    const [voteLevel, setvoteLevel] = useState(0); // Initial fluid level
+    const [voteLevel, setvoteLevel] = useState(0); 
+    const [count, setcount] = useState(0);
     const handleClick = () => {
         if (voteLevel <= 200) {
-            setvoteLevel(voteLevel + 10);
+            setvoteLevel(voteLevel + 20);
+            setcount(count+1);
         }
         else {
             setvoteLevel(0);
@@ -47,7 +49,7 @@ const Box = ({ option }) => {
                         }}
                     ></section>
                 </section>
-                <span style={{ marginLeft: '10px', color: 'white' }}>22</span>
+                <span style={{ marginLeft: '10px', color: 'white' }}>{count}</span>
             </div>
         </div>
 
